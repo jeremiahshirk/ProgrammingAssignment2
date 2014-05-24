@@ -56,8 +56,10 @@ cacheSolve <- function(x, ...) {
     message("cached")
     return(inv)
   }
-  data <- x$get()
-  inv <- solve(data, ...)
-  x$setinv(inv)
+  else {
+    data <- x$get()
+    inv <- solve(data, ...)
+    x$setinv(inv)
+  }
   inv
 }
